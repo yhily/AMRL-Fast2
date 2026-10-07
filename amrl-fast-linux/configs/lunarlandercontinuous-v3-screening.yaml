@@ -1,0 +1,20 @@
+# One-seed profiling screen only: this is not a manuscript result or a
+# five-seed experiment.  Cadence and all AMRL/AMRL-Fast settings match the
+# existing 100k-step formal protocol.
+environment:
+  env_name: LunarLanderContinuous-v3
+  allow_version_fallback: false
+training:
+  total_timesteps: 100000
+  adaptation_interval: 10000
+  warmup_steps: 10000
+  transition_steps: 10000
+evaluation:
+  episodes: 20
+seeds: [0]
+device: auto
+output_dir: results_screening
+development_only: true
+fast_backend:
+  name: AMRL-Fast-Rebuilt-Kernel
+  require_optimized_backend: true

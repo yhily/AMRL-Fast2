@@ -1,0 +1,13 @@
+# TITAN Xp (sm_61) validated Linux environment.  The CUDA wheel index is
+# required because ordinary PyPI does not provide the +cu121 build.
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.3.1+cu121
+numpy==1.26.4
+scipy==1.11.4
+gymnasium[box2d]==0.29.1
+mujoco==2.3.7
+imageio==2.37.3
+shimmy==1.3.0
+stable-baselines3==2.3.2
+PyYAML==6.0.3
+pytest==9.1.1

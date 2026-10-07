@@ -1,0 +1,5 @@
+# Install only when the paper must run the legacy Gym MuJoCo *-v2 IDs exactly.
+# This stack is separate from Gymnasium's current MuJoCo v4 implementation.
+gym==0.25.2
+mujoco-py<2.2
+shimmy>=1.3

@@ -1,0 +1,20 @@
+environment:
+  env_name: MountainCar-v0
+  allow_version_fallback: false
+training:
+  total_timesteps: 100000
+  adaptation_interval: 10000
+  controller_start_after_steps: 0
+  warmup_steps: 10000
+  transition_steps: 10000
+  checkpoint_interval: 10000
+  controller_hidden_size: 256
+  controller_batched_replay: true
+evaluation:
+  episodes: 20
+seeds: [0]
+device: auto
+development_only: true
+fast_backend:
+  name: AMRL-Fast-Rebuilt-Kernel
+  require_optimized_backend: true

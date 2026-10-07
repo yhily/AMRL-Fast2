@@ -1,0 +1,6 @@
+# Isolated dependency overlay for the exact Gymnasium v3 Box2D IDs used only
+# by the one-seed screening.  It leaves the validated MuJoCo environment
+# untouched.  The AMRL/PPO code and its hyperparameter configuration are not
+# changed by this file.
+gymnasium[box2d]==1.0.0
+stable-baselines3==2.4.1

@@ -1,0 +1,3 @@
+# Optional original-workload dependency.  The adapter preserves BSuite's
+# public memory_len task while exposing the Gymnasium API required by SB3.
+bsuite

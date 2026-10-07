@@ -1,0 +1,23 @@
+# Frozen continuous-control protocol with audit-only persistence enabled by
+# the runner.  This separate output tree preserves the earlier aggregate run.
+environment:
+  env_name: Hopper-v4
+  allow_version_fallback: false
+training:
+  total_timesteps: 100000
+  adaptation_interval: 10000
+  warmup_steps: 10000
+  transition_steps: 10000
+  checkpoint_interval: 10000
+  controller_start_after_steps: 0
+  controller_hidden_size: 256
+  controller_batched_replay: true
+  enable_rollout_backend: true
+evaluation:
+  episodes: 20
+seeds: [0, 1, 2, 3, 4]
+device: auto
+output_dir: results/audited_continuous_r3
+fast_backend:
+  name: AMRL-Fast-Rebuilt-Kernel
+  require_optimized_backend: true

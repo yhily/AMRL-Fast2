@@ -1,0 +1,20 @@
+# Paper-protocol extension: Hopper-v2. Do not change these training values
+# without creating a separate experimental condition.
+environment:
+  env_name: Hopper-v2
+  allow_version_fallback: false
+training:
+  total_timesteps: 100000
+  adaptation_interval: 10000
+  warmup_steps: 10000
+  transition_steps: 10000
+evaluation:
+  episodes: 20
+seeds: [0, 1, 2, 3, 4]
+device: auto
+output_dir: results
+fast_backend:
+  # Rebuilt four-gate candidates. The fastest route passing this GPU's
+  # real-shape forward/backward fidelity and speed screen is selected.
+  name: AMRL-Fast-Rebuilt-Kernel
+  require_optimized_backend: true

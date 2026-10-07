@@ -1,0 +1,22 @@
+# Frozen preflight protocol.  This is deliberately one paired seed only;
+# five-seed formal execution remains prohibited until its JSON acceptance pass.
+environment:
+  env_name: HalfCheetah-v4
+  allow_version_fallback: false
+training:
+  total_timesteps: 100000
+  adaptation_interval: 10000
+  warmup_steps: 10000
+  transition_steps: 10000
+  checkpoint_interval: 10000
+  controller_hidden_size: 256
+  controller_batched_replay: true
+evaluation:
+  episodes: 20
+seeds: [0]
+device: auto
+output_dir: results/halfcheetah_v4_seed0_audit
+development_only: false
+fast_backend:
+  name: AMRL-Fast-Rebuilt-Kernel
+  require_optimized_backend: true

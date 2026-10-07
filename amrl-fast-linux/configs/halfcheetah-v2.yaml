@@ -1,0 +1,17 @@
+# Compatibility check for the paper's existing continuous-control environment.
+environment:
+  env_name: HalfCheetah-v2
+  allow_version_fallback: false
+training:
+  total_timesteps: 100000
+  adaptation_interval: 10000
+  warmup_steps: 10000
+  transition_steps: 10000
+evaluation:
+  episodes: 20
+seeds: [0, 1, 2, 3, 4]
+device: auto
+output_dir: results
+fast_backend:
+  name: AMRL-Fast-Rebuilt-Kernel
+  require_optimized_backend: true

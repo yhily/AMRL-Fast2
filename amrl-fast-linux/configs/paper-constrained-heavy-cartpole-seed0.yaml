@@ -1,0 +1,32 @@
+protocol_name: paper-constrained-heavy-amrl-r1
+environment:
+  env_name: CartPole-v1
+  max_episode_steps: 1000
+training:
+  main_env_steps: 100000
+  adaptation_interval: 10000
+  adaptation_events: 10
+outer_probe:
+  actions_per_checkpoint: 8
+  training_steps_per_action: 1000
+  endpoint_evaluation_episodes: 20
+outer_ppo:
+  clip: 0.2
+  gamma: 0.99
+  gae_lambda: 0.95
+  value_coefficient: 0.5
+  entropy_coefficient: 0.001
+  learning_rate: 0.001
+  gradient_clip: 1.0
+  epochs: 10
+  batch_size: 8
+meta_controller:
+  input_size: 5
+  hidden_size: 256
+  output_size: 3
+  action_std: 0.10
+evaluation:
+  checkpoint_episodes: 20
+seed: 0
+development_only: true
+paper_result_eligible: false
